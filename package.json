@@ -1,0 +1,63 @@
+{
+  "name": "vanchain",
+  "version": "1.0.0",
+  "description": "BIP39,BIP44 wallet",
+  "main": "index.js",
+  "repository": "https://github.com/nattogo/multi-currency-wallet",
+  "author": "nattogo",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx tsc && yarn copy:lib",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "copy:lib": "cp -R src/lib dist/"
+  },
+  "dependencies": {
+    "@types/ethereumjs-util": "^6.1.0",
+    "bchaddrjs": "^0.5.2",
+    "bitcoinjs-lib": "^3.3.2",
+    "ethereumjs-util": "^7.0.7"
+  },
+  "devDependencies": {
+    "@types/bchaddrjs": "^0.4.0",
+    "@types/bitcoinjs-lib": "^3.3.2",
+    "@types/jest": "26.0.10",
+    "@types/sjcl": "^1.0.29",
+    "@typescript-eslint/eslint-plugin": "3.9.1",
+    "@typescript-eslint/parser": "3.9.1",
+    "eslint": "7.7.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "jest": "26.4.2",
+    "prettier": "^1.19.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "26.2.0",
+    "typescript": "^4.1.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": ".",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/src/"
+    ]
+  }
+}

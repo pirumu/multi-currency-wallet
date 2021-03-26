@@ -1,0 +1,1 @@
+Thư viện này đã được sửa để sử dụng hmac512 trong sjcl.misc.hmac
